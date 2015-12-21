@@ -1,0 +1,672 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+          Version I-2013.12-SP5 for RHEL32 -- Jul 20, 2014
+               Copyright (c) 1988-2014 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Information: As of the J-2014.09 version of dc_shell, the 32-bit
+             version of the product will not be delivered by default.
+             If you require a 32-bit version for any reason, please
+             contact Synopsys technical support.
+
+Initializing...
+set link_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25 /apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25 /apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb
+set target_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25
+read_verilog sfilt.v
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25'
+Loading db file '/apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb'
+Loading db file '/apps/synopsys/I-2013.12-SP5/libraries/syn/gtech.db'
+Loading db file '/apps/synopsys/I-2013.12-SP5/libraries/syn/standard.sldb'
+  Loading link library 'tc240c'
+  Loading link library 'gtech'
+Loading verilog file '/home/go/gogr4530/sfilt2/sfilt.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/go/gogr4530/sfilt2/sfilt.v
+Warning:  Starting with the 2000.11-1 release, the Presto Verilog reader treats Verilog 'integer' types as signed; synthesized result may not match earlier versions of HDL Compiler. (VER-314)
+Warning:  /home/go/gogr4530/sfilt2/sfilt.v:22: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/go/gogr4530/sfilt2/sfilt.v:37: unsigned to signed assignment occurs. (VER-318)
+Warning:  /home/go/gogr4530/sfilt2/sfilt.v:38: unsigned to signed assignment occurs. (VER-318)
+Warning:  /home/go/gogr4530/sfilt2/sfilt.v:70: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/go/gogr4530/sfilt2/sfilt.v:71: signed to unsigned conversion occurs. (VER-318)
+Warning:  /home/go/gogr4530/sfilt2/sfilt.v:76: signed to unsigned part selection occurs. (VER-318)
+
+Statistics for case statements in always block at line 26 in file
+	'/home/go/gogr4530/sfilt2/sfilt.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            42            |    auto/auto     |
+|            61            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine sfilt line 85 in file
+		'/home/go/gogr4530/sfilt2/sfilt.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      push2_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      cmd2_reg       | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      cmd1_reg       | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     h0_d_a_reg      | Flip-flop |   7   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      push1_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      cmd0_reg       | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       h0_reg        | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      push0_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|       acc_reg       | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       q0_reg        | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      dout_reg       | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    _pushout_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      acc_a_reg      | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      ho_2_reg       | Flip-flop |   7   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/go/gogr4530/sfilt2/sfilt.db:sfilt'
+Loaded 1 design.
+Current design is 'sfilt'.
+sfilt
+create_clock clk -name clk -period 2.31
+1
+set_propagated_clock clk
+Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
+1
+set_clock_uncertainty 0.25 clk
+1
+set_propagated_clock clk
+Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
+1
+set_output_delay 0.5 -clock clk [all_outputs]
+1
+set all_inputs_wo_rst_clk [remove_from_collection [remove_from_collection [all_inputs] [get_port clk]] [get_port rst]]
+{pushin cmd[1] cmd[0] q[31] q[30] q[29] q[28] q[27] q[26] q[25] q[24] q[23] q[22] q[21] q[20] q[19] q[18] q[17] q[16] q[15] q[14] q[13] q[12] q[11] q[10] q[9] q[8] q[7] q[6] q[5] q[4] q[3] q[2] q[1] q[0] h[31] h[30] h[29] h[28] h[27] h[26] h[25] h[24] h[23] h[22] h[21] h[20] h[19] h[18] h[17] h[16] h[15] h[14] h[13] h[12] h[11] h[10] h[9] h[8] h[7] h[6] h[5] h[4] h[3] h[2] h[1] h[0]}
+set_driving_cell -lib_cell CND2X1 $all_inputs_wo_rst_clk
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+1
+set_input_delay 0.6 -clock clk $all_inputs_wo_rst_clk
+1
+set_output_delay 0.6 -clock clk [all_outputs]
+1
+set_fix_hold [ get_clocks clk ]
+1
+set_output_delay 0.3 -clock clk [all_outputs]
+1
+compile_ultra
+Analyzing: "/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25"
+Library analysis succeeded.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | I-2013.12-DWBB_201312.5 |     *     |
+| Licensed DW Building Blocks        | I-2013.12-DWBB_201312.5 |     *     |
+============================================================================
+
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 2 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Loaded alib file './alib-52/tc240c.db_NOMIN25.alib'
+Information: Ungrouping 0 of 1 hierarchies before Pass 1 (OPT-775)
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'sfilt'
+ Implement Synthetic for 'sfilt'.
+  Processing 'sfilt_DW02_mult_3_stage_J1_0'
+Information: Added key list 'DesignWare' to design 'sfilt'. (DDB-72)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Checking pipeline property of cell a1 (design sfilt_DW02_mult_3_stage_J1_0). (RTDC-137)
+Information: cell a1 (design sfilt_DW02_mult_3_stage_J1_0) is a pipeline. (RTDC-139)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+  Retiming sfilt_DW02_mult_3_stage_J1_0 (a1)
+Warning: There are buffer or inverter cells in the
+	clock tree. The clock tree has to be recreated after
+	retiming. (RTDC-47)
+  Preferred flip-flop is CFD2XL with setup = 0.21
+
+
+  Retiming base-clock clk, rising edge.
+  Beginning minimum period retiming ...
+  ... minimum period retiming done.
+  Beginning minimum area retiming step 1 ...
+  ... minimum area retiming step 1 done.
+  Beginning minimum area retiming step 2 ...
+  5% 10% 15% 20% 25% 30% 35% 40% 45% 50% 55% 60% 65% 70% 75% 80% 85% 90% 95% 100% 
+  ... minimum area retiming step 2 done.
+  Beginning minimum area retiming step 3 ...
+  10%   ... minimum area retiming step 1 done.
+  Beginning minimum area retiming step 2 ...
+  5% 10% 15% 20% 25% 30% 35% 40% 45% 50% 55% 60% 65% 70% 75% 80% 85% 90% 95% 100% 
+  ... minimum area retiming step 2 done.
+  Beginning minimum area retiming step 3 ...
+  10% 20% 30% 40% 50% 60% ... 100% 
+  ... minimum area retiming step 3 done.
+  Beginning final register move ...
+  ... final register move done.
+  Lower bound estimate = 2.10
+  Critical path length = 2.10
+  Clock correction = 0.94 (clock-to-Q delay = 0.48, setup = 0.21, uncertainty = 0.25)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+  Mapping Optimization (Phase 3)
+  Mapping Optimization (Phase 4)
+  Mapping Optimization (Phase 5)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:39   18521.0      0.63     188.7       0.0 acc_reg[27]/D                  0.00
+    0:00:39   18521.0      0.63     188.7       0.0 acc_reg[27]/D                  0.00
+    0:00:41   18488.5      0.60     175.5       0.0                                0.00
+    0:00:41   18488.5      0.60     175.5       0.0                                0.00
+    0:00:41   18488.5      0.60     175.5       0.0                                0.00
+    0:00:41   18482.5      0.60     175.5       0.0                                0.00
+  Re-synthesis Optimization (Phase 1)
+  Re-synthesis Optimization (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+    0:00:48   13760.5      0.64      84.1    1025.5                                0.00
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:48   13760.5      0.64      84.1    1025.5                                0.00
+    0:00:49   13801.0      0.60      82.1    1025.6                                0.00
+    0:00:49   13874.0      0.59      78.5    1025.6                                0.00
+    0:00:50   13907.5      0.59      76.6    1025.7                                0.00
+    0:00:57   14314.0      0.54      74.1    1025.7                                0.00
+    0:00:57   14314.0      0.54      74.1    1025.7                                0.00
+    0:00:57   14331.0      0.52      73.6    1025.7                                0.00
+    0:00:57   14331.0      0.52      73.6    1025.7                                0.00
+    0:01:02   14448.0      0.51      72.8    1025.7                                0.00
+    0:01:02   14448.0      0.51      72.8    1025.7                                0.00
+    0:01:08   14880.5      0.41      64.8    1021.7                                0.00
+    0:01:08   14880.5      0.41      64.8    1021.7                                0.00
+    0:01:08   14890.5      0.41      64.7    1021.7                                0.00
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:01:09   14890.5      0.41      64.9    1022.0                                0.00
+    0:01:15   15241.5      0.37      60.3    1026.0                                0.00
+    0:01:15   15241.5      0.37      60.3    1026.0                                0.00
+    0:01:15   15241.5      0.37      60.3    1026.0                                0.00
+    0:01:15   15238.5      0.37      60.7    1022.1                                0.00
+    0:01:16   15270.5      0.36      60.2    1022.1                                0.00
+    0:01:16   15270.5      0.36      60.2    1022.1                                0.00
+    0:01:17   15282.0      0.36      59.9    1022.1                                0.00
+    0:01:17   15281.0      0.36      59.4    1022.1                              -10.50
+
+
+  Beginning Design Rule Fixing  (min_path)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:17   15281.0      0.36      59.4    1022.1                              -10.50
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+    0:01:18   15436.5      0.36      61.1       0.0                                0.00
+    0:01:19   14950.5      0.36      55.4       0.0                               -7.18
+    0:01:19   14950.5      0.36      55.4       0.0                               -7.18
+    0:01:21   14971.0      0.35      54.1       0.0                               -7.20
+    0:01:24   15139.0      0.34      52.0       0.0                               -7.13
+    0:01:25   15262.0      0.34      53.8       0.0                                0.00
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:25   15262.0      0.34      53.8       0.0                                0.00
+    0:01:26   15153.5      0.34      54.7     187.8                               -4.81
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+    0:01:27   15243.5      0.33      53.4       0.0                               -4.71
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:27   15243.5      0.33      53.4       0.0                               -4.71
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+  Global Optimization (Phase 46)
+  Global Optimization (Phase 47)
+  Global Optimization (Phase 48)
+  Global Optimization (Phase 49)
+  Global Optimization (Phase 50)
+  Global Optimization (Phase 51)
+  Global Optimization (Phase 52)
+  Global Optimization (Phase 53)
+  Global Optimization (Phase 54)
+  Global Optimization (Phase 55)
+  Global Optimization (Phase 56)
+  Global Optimization (Phase 57)
+  Global Optimization (Phase 58)
+  Global Optimization (Phase 59)
+  Global Optimization (Phase 60)
+  Global Optimization (Phase 61)
+  Global Optimization (Phase 62)
+  Global Optimization (Phase 63)
+  Global Optimization (Phase 64)
+  Global Optimization (Phase 65)
+  Global Optimization (Phase 66)
+  Global Optimization (Phase 67)
+    0:01:34   14493.0      0.29      71.0       0.0                              -10.44
+    0:01:35   14494.5      0.29      70.8       0.0                              -10.44
+    0:01:36   14685.0      0.28      70.8       0.0                                0.00
+    0:01:37   14704.5      0.28      69.8       0.0                                0.00
+    0:01:38   14748.5      0.28      61.5       0.0                               -0.10
+    0:01:38   14758.0      0.28      59.9       0.0                               -0.10
+    0:01:39   14788.0      0.28      60.1       0.0                               -0.10
+    0:01:39   14788.0      0.28      60.1       0.0                               -0.10
+    0:01:39   14790.0      0.28      60.2       0.0                               -0.10
+    0:01:39   14790.0      0.28      60.2       0.0                               -0.10
+    0:01:41   14832.5      0.28      59.8       0.0                               -0.10
+    0:01:41   14832.5      0.28      59.8       0.0                               -0.10
+    0:01:43   15000.0      0.25      58.2       0.0                               -0.10
+    0:01:43   15000.0      0.25      58.2       0.0                               -0.10
+    0:01:46   15004.5      0.25      58.2       0.0                               -0.10
+    0:01:46   15004.5      0.25      58.2       0.0                               -0.10
+    0:01:47   15041.5      0.24      58.0       0.0                               -0.10
+    0:01:47   15041.5      0.24      58.0       0.0                               -0.10
+    0:01:47   15041.5      0.24      58.0       0.0                               -0.10
+    0:01:47   15041.5      0.24      58.0       0.0                               -0.10
+    0:01:47   15041.5      0.24      58.0       0.0                               -0.10
+    0:01:47   15041.5      0.24      58.0       0.0                               -0.10
+    0:01:48   15041.5      0.24      58.0       0.0                               -0.10
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25'
+
+  Optimization Complete
+  ---------------------
+1
+create_clock clk -name clk -period 3.3
+1
+update_timing
+Information: Updating design information... (UID-85)
+1
+report_timing -max_paths 3
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 3
+Design : sfilt
+Version: I-2013.12-SP5
+Date   : Sat Feb 28 23:59:04 2015
+****************************************
+
+Operating Conditions: NOMIN25   Library: tc240c
+Wire Load Model Mode: top
+
+  Startpoint: ho_2_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: acc_reg[61]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  ho_2_reg[1]/CP (CFD4X1)                  0.00       0.00 r
+  ho_2_reg[1]/Q (CFD4X1)                   0.31       0.31 f
+  U1919/Z (CND2X2)                         0.09       0.39 r
+  U1898/Z (CIVXL)                          0.11       0.51 f
+  U2069/Z (CANR2X1)                        0.18       0.68 r
+  U884/Z (CND3X2)                          0.12       0.81 f
+  U1778/Z (CND2XL)                         0.07       0.88 r
+  U2164/Z (CND4X1)                         0.16       1.04 f
+  U2501/Z (CND2X1)                         0.08       1.11 r
+  U2502/Z (CND2X2)                         0.08       1.19 f
+  U1726/Z (CNR2X2)                         0.09       1.28 r
+  U2509/Z (CND3X2)                         0.12       1.40 f
+  U1060/Z (CNR2X2)                         0.10       1.50 r
+  U2588/Z (CND3X2)                         0.11       1.61 f
+  U2589/Z (CNR2X2)                         0.13       1.74 r
+  U2951/Z (CNR2IX1)                        0.16       1.91 r
+  U3270/Z (CANR1XL)                        0.08       1.99 f
+  U3271/Z (CIVXL)                          0.04       2.03 r
+  U3280/Z (CND2XL)                         0.06       2.09 f
+  acc_reg[61]/D (CFD2QXL)                  0.00       2.09 f
+  data arrival time                                   2.09
+
+  clock clk (rise edge)                    3.30       3.30
+  clock network delay (ideal)              0.00       3.30
+  clock uncertainty                       -0.25       3.05
+  acc_reg[61]/CP (CFD2QXL)                 0.00       3.05 r
+  library setup time                      -0.22       2.83
+  data required time                                  2.83
+  -----------------------------------------------------------
+  data required time                                  2.83
+  data arrival time                                  -2.09
+  -----------------------------------------------------------
+  slack (MET)                                         0.75
+
+
+  Startpoint: a1/mult_x_1/clk_r_REG588_S1
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: a1/mult_x_1/clk_r_REG128_S2
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  a1/mult_x_1/clk_r_REG588_S1/CP (CFD1QX4)                0.00       0.00 r
+  a1/mult_x_1/clk_r_REG588_S1/Q (CFD1QX4)                 0.26       0.26 f
+  a1/U837/CO (CFA1X1)                                     0.29       0.56 f
+  a1/U925/S (CFA1X1)                                      0.34       0.89 f
+  a1/U978/CO (CFA1X1)                                     0.25       1.14 f
+  a1/U2449/CO (CFA1X1)                                    0.25       1.39 f
+  a1/U982/S (CFA1X1)                                      0.37       1.76 r
+  a1/U2428/S (CFA1X1)                                     0.32       2.08 f
+  a1/mult_x_1/clk_r_REG128_S2/D (CFD1QX1)                 0.00       2.08 f
+  data arrival time                                                  2.08
+
+  clock clk (rise edge)                                   3.30       3.30
+  clock network delay (ideal)                             0.00       3.30
+  clock uncertainty                                      -0.25       3.05
+  a1/mult_x_1/clk_r_REG128_S2/CP (CFD1QX1)                0.00       3.05 r
+  library setup time                                     -0.22       2.83
+  data required time                                                 2.83
+  --------------------------------------------------------------------------
+  data required time                                                 2.83
+  data arrival time                                                 -2.08
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.75
+
+
+  Startpoint: ho_2_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: acc_reg[44]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  ho_2_reg[0]/CP (CFD4X2)                  0.00       0.00 r
+  ho_2_reg[0]/QN (CFD4X2)                  0.29       0.29 r
+  U1920/Z (CNR2X2)                         0.08       0.37 f
+  U1854/Z1 (CIVDX3)                        0.17       0.53 f
+  U2088/Z (CND2XL)                         0.08       0.61 r
+  U1748/Z (COND1X1)                        0.12       0.74 f
+  U908/Z (CIVX2)                           0.05       0.78 r
+  U2089/Z (CND2X2)                         0.07       0.86 f
+  U1803/Z (CND2X1)                         0.07       0.92 r
+  U2248/Z (CND4X2)                         0.14       1.07 f
+  U2545/Z (CND2X2)                         0.06       1.12 r
+  U2556/Z (CND4X2)                         0.10       1.22 f
+  U2557/Z (CNR2IX2)                        0.09       1.31 r
+  U2561/Z (CND2X2)                         0.11       1.43 f
+  U1071/Z (CIVX3)                          0.05       1.48 r
+  U1062/Z (CND3X2)                         0.11       1.59 f
+  U2899/Z (CNR2X4)                         0.09       1.67 r
+  U1066/Z (CIVX2)                          0.08       1.75 f
+  U3058/Z (CNR2X2)                         0.08       1.83 r
+  U3498/Z (CND2X1)                         0.10       1.93 f
+  U3509/Z (CND2IXL)                        0.08       2.01 r
+  U3510/Z (CND2X1)                         0.08       2.08 f
+  acc_reg[44]/D (CFD2QX2)                  0.00       2.08 f
+  data arrival time                                   2.08
+
+  clock clk (rise edge)                    3.30       3.30
+  clock network delay (ideal)              0.00       3.30
+  clock uncertainty                       -0.25       3.05
+  acc_reg[44]/CP (CFD2QX2)                 0.00       3.05 r
+  library setup time                      -0.22       2.83
+  data required time                                  2.83
+  -----------------------------------------------------------
+  data required time                                  2.83
+  data arrival time                                  -2.08
+  -----------------------------------------------------------
+  slack (MET)                                         0.75
+
+
+1
+write -hierarchy -format verilog -output sfilt_gates.v
+Writing verilog file '/home/go/gogr4530/sfilt2/sfilt_gates.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+quit
+
+Thank you...
